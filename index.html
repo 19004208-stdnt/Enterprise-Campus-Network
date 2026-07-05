@@ -1,1 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise Campus Network Project</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #dbeafe;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    nav {
+      background: #0f172a;
+      padding: 15px 10%;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 50px 10%;
+    }
+
+    .section-title {
+      font-size: 30px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+      border-left: 5px solid #2563eb;
+      padding-left: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 8px 14px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #1e3a8a;
+      color: white;
+    }
+
+    .highlight {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Enterprise Campus Network Infrastructure</h1>
+    <p>
+      A Cisco Packet Tracer enterprise network project demonstrating VLAN segmentation,
+      trunking, routing, firewall integration, switching, and network documentation.
+    </p>
+    <a class="btn" href="https://github.com/19004208-stdnt/Enterprise-Campus-Network" target="_blank">
+      View GitHub Repository
+    </a>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#vlan">VLAN Plan</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#skills">Skills</a>
+  </nav>
+
+  <section id="overview">
+    <h2 class="section-title">Project Overview</h2>
+
+    <div class="card">
+      <p>
+        This project demonstrates the design and implementation of a scalable enterprise
+        campus network using Cisco Packet Tracer. The network follows Cisco's
+        three-tier hierarchical architecture consisting of the Core, Distribution,
+        and Access layers.
+      </p>
+
+      <br />
+
+      <p>
+        The project simulates a multi-department campus environment with an ISP connection,
+        edge router, ISA firewall, core switch, distribution switches, access switches,
+        department PCs, printers, and future data centre services.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Project Type</h3>
+        <p>Enterprise Campus Network Simulation</p>
+      </div>
+
+      <div class="card">
+        <h3>Tool Used</h3>
+        <p>Cisco Packet Tracer</p>
+      </div>
+
+      <div class="card">
+        <h3>Network Model</h3>
+        <p>Core, Distribution, and Access Layer</p>
+      </div>
+
+      <div class="card">
+        <h3>Status</h3>
+        <p>In Progress and Continuously Improving</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture">
+    <h2 class="section-title">Network Architecture</h2>
+
+    <div class="card">
+      <p>
+        The network is designed using a three-tier enterprise architecture:
+      </p>
+
+      <div class="highlight">
+        <strong>ISP Cloud → Edge Router → ISA Firewall → Core Switch → Distribution Switches → Access Switches → End Devices</strong>
+      </div>
+
+      <img src="screenshots/Full Topology.png" alt="Full Network Topology">
+    </div>
+  </section>
+
+  <section id="vlan">
+    <h2 class="section-title">VLAN and IP Addressing Plan</h2>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th>VLAN</th>
+          <th>Department</th>
+          <th>Network</th>
+          <th>Gateway</th>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Administration</td>
+          <td>192.168.10.0/24</td>
+          <td>192.168.10.1</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>ICT</td>
+          <td>192.168.20.0/24</td>
+          <td>192.168.20.1</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>Engineering</td>
+          <td>192.168.30.0/24</td>
+          <td>192.168.30.1</td>
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>Science</td>
+          <td>192.168.40.0/24</td>
+          <td>192.168.40.1</td>
+        </tr>
+        <tr>
+          <td>50</td>
+          <td>Library</td>
+          <td>192.168.50.0/24</td>
+          <td>192.168.50.1</td>
+        </tr>
+        <tr>
+          <td>60</td>
+          <td>Residence</td>
+          <td>192.168.60.0/24</td>
+          <td>192.168.60.1</td>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>Servers</td>
+          <td>192.168.100.0/24</td>
+          <td>192.168.100.1</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="screenshots">
+    <h2 class="section-title">Implementation Evidence</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>ISP Cloud Configuration</h3>
+        <img src="screenshots/screenshotsISP-Cloud-Configuration.png" alt="ISP Cloud Configuration">
+      </div>
+
+      <div class="card">
+        <h3>Edge Router Interfaces</h3>
+        <img src="screenshots/Router-Interfaces.png" alt="Router Interfaces">
+      </div>
+
+      <div class="card">
+        <h3>Edge Router Routing Table</h3>
+        <img src="screenshots/Router-Routing-Table.png" alt="Router Routing Table">
+      </div>
+
+      <div class="card">
+        <h3>Firewall Interfaces</h3>
+        <img src="screenshots/Firewall-Interfaces.png" alt="Firewall Interfaces">
+      </div>
+
+      <div class="card">
+        <h3>Firewall Running Configuration</h3>
+        <img src="screenshots/Firewall-Running-Config.png" alt="Firewall Running Configuration">
+      </div>
+
+      <div class="card">
+        <h3>Core Switch Interfaces</h3>
+        <img src="screenshots/Core-Interfaces.png" alt="Core Interfaces">
+      </div>
+
+      <div class="card">
+        <h3>Core Switch VLANs</h3>
+        <img src="screenshots/Core-VLANs.png" alt="Core VLANs">
+      </div>
+
+      <div class="card">
+        <h3>Core Switch Trunk Links</h3>
+        <img src="screenshots/Core-Trunk.png" alt="Core Trunk">
+      </div>
+
+      <div class="card">
+        <h3>Distribution Switch VLANs</h3>
+        <img src="screenshots/DS-Administration-VLAN.png" alt="DS Administration VLAN">
+      </div>
+
+      <div class="card">
+        <h3>Distribution Switch Trunk Links</h3>
+        <img src="screenshots/DS-Administration-Trunk.png" alt="DS Administration Trunk">
+      </div>
+
+      <div class="card">
+        <h3>Distribution Switch CDP Neighbors</h3>
+        <img src="screenshots/DS-Administration-CDP.png" alt="DS Administration CDP">
+      </div>
+
+      <div class="card">
+        <h3>Distribution Switch MAC Table</h3>
+        <img src="screenshots/DS-Administration-MAC-Table.png" alt="DS Administration MAC Table">
+      </div>
+
+      <div class="card">
+        <h3>Access Switch VLANs</h3>
+        <img src="screenshots/AS-ADMIN1-VLAN.png" alt="AS ADMIN1 VLAN">
+      </div>
+
+      <div class="card">
+        <h3>Access Switch Interfaces</h3>
+        <img src="screenshots/AS-ADMIN1-Interfaces.png" alt="AS ADMIN1 Interfaces">
+      </div>
+
+      <div class="card">
+        <h3>Access Switch CDP Neighbors</h3>
+        <img src="screenshots/AS-ADMIN1-CDP.png" alt="AS ADMIN1 CDP">
+      </div>
+
+      <div class="card">
+        <h3>Access Switch MAC Table</h3>
+        <img src="screenshots/AS-ADMIN1-MAC-Table.png" alt="AS ADMIN1 MAC Table">
+      </div>
+
+      <div class="card">
+        <h3>Access Switch Running Configuration</h3>
+        <img src="screenshots/AS-ADMIN1-Running-Config-1.png" alt="AS ADMIN1 Running Configuration">
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills Demonstrated</h2>
+
+    <div class="card">
+      <span class="badge">Cisco Packet Tracer</span>
+      <span class="badge">Routing</span>
+      <span class="badge">Switching</span>
+      <span class="badge">VLANs</span>
+      <span class="badge">802.1Q Trunking</span>
+      <span class="badge">Inter-VLAN Routing</span>
+      <span class="badge">Firewall Configuration</span>
+      <span class="badge">Cisco IOS CLI</span>
+      <span class="badge">IP Addressing</span>
+      <span class="badge">TCP/IP</span>
+      <span class="badge">Network Troubleshooting</span>
+      <span class="badge">Technical Documentation</span>
+      <span class="badge">IT Infrastructure</span>
+      <span class="badge">Network Engineering</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Testing and Validation</h2>
+
+    <div class="card">
+      <p>
+        The network was validated using Cisco IOS verification commands including:
+      </p>
+
+      <ul>
+        <li><code>show vlan brief</code></li>
+        <li><code>show interfaces trunk</code></li>
+        <li><code>show ip interface brief</code></li>
+        <li><code>show ip route</code></li>
+        <li><code>show cdp neighbors</code></li>
+        <li><code>show mac address-table</code></li>
+        <li>Ping tests between hosts and gateways</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Future Improvements</h2>
+
+    <div class="card">
+      <ul>
+        <li>Configure DHCP Server</li>
+        <li>Configure DNS Server</li>
+        <li>Add Web Server, Email Server, and File Server</li>
+        <li>Configure NAT/PAT for Internet access</li>
+        <li>Implement ACLs for department-level security</li>
+        <li>Add Port Security</li>
+        <li>Add Wireless Access Points</li>
+        <li>Add Syslog and SNMP Monitoring</li>
+        <li>Implement OSPF routing</li>
+        <li>Extend the lab to Microsoft Azure hybrid infrastructure</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Enterprise Campus Network Project | Cisco Packet Tracer | Network Engineering Portfolio</p>
+  </footer>
+
+</body>
+</html>
