@@ -1,83 +1,42 @@
 # Enterprise Campus Network Infrastructure
 
-## Project Overview
-This project demonstrates the design and implementation of an enterprise campus network using Cisco Packet Tracer. The network follows Cisco's three-tier hierarchical architecture: Core, Distribution, and Access layers.
+![Project Status](https://img.shields.io/badge/Status-In%20Progress-blue)
+![Tool](https://img.shields.io/badge/Tool-Cisco%20Packet%20Tracer-green)
+![Networking](https://img.shields.io/badge/Focus-Network%20Engineering-orange)
+![Documentation](https://img.shields.io/badge/Documentation-Available-purple)
 
-The project includes VLAN segmentation, inter-VLAN routing, enterprise switching, firewall integration, IP addressing, and network testing.
+## Live Project Page
+
+🔗 **View Live Portfolio Project:**  
+[Enterprise Campus Network Live Page](https://19004208-stdnt.github.io/Enterprise-Campus-Network/)
+
+---
+
+## Project Overview
+
+This project demonstrates the design and implementation of an **enterprise campus network infrastructure** using **Cisco Packet Tracer**. The network follows Cisco’s three-tier hierarchical architecture, consisting of the **Core Layer, Distribution Layer, and Access Layer**.
+
+The project simulates a multi-department campus environment with an ISP connection, edge router, firewall, core switch, distribution switches, access switches, department PCs, printers, and a planned data centre services network.
+
+The purpose of this project is to demonstrate practical networking skills required for roles such as **IT Support Technician, Network Engineer, NOC Technician, IT Infrastructure Engineer, and Server Support Engineer**.
+
+---
 
 ## Network Architecture
-- ISP Cloud
-- Cisco 2911 Edge Router
-- Cisco ISA-3000 Firewall
-- Cisco 3650 Core Switch
-- Cisco 3560 Distribution Switches
-- Cisco 2960 Access Switches
-- Department PCs and Printers
-- Data Centre Server Network
 
-## Departments
-- Administration
-- ICT
-- Engineering
-- Science
-- Library
-- Student Residence
-- Data Centre
+The network follows a structured enterprise design:
 
-## Technologies Used
-- Cisco Packet Tracer
-- VLANs
-- 802.1Q Trunking
-- Inter-VLAN Routing
-- Cisco IOS CLI
-- IP Addressing
-- Static Routing
-- Firewall Configuration
-- Network Troubleshooting
-
-## Skills Demonstrated
-- Enterprise Network Design
-- Routing and Switching
-- VLAN Configuration
-- Trunk Port Configuration
-- Firewall Integration
-- IP Address Planning
-- Network Testing
-- Cisco CLI Configuration
-- Technical Documentation
-
-## Network Topology
-![Physical Topology](diagrams/Physical%20Topology.png)
-
-## VLAN and IP Addressing Plan
-
-| VLAN | Department | Network | Gateway |
-|------|------------|---------|---------|
-| 10 | Administration | 192.168.10.0/24 | 192.168.10.1 |
-| 20 | ICT | 192.168.20.0/24 | 192.168.20.1 |
-| 30 | Engineering | 192.168.30.0/24 | 192.168.30.1 |
-| 40 | Science | 192.168.40.0/24 | 192.168.40.1 |
-| 50 | Library | 192.168.50.0/24 | 192.168.50.1 |
-| 60 | Residence | 192.168.60.0/24 | 192.168.60.1 |
-| 100 | Servers | 192.168.100.0/24 | 192.168.100.1 |
-
-## Testing
-The network was tested using:
-- Ping tests
-- Trunk verification
-- VLAN verification
-- Interface status checks
-- Firewall interface verification
-
-## Future Improvements
-- DHCP Server
-- DNS Server
-- Web Server
-- Email Server
-- File Server
-- ACLs
-- NAT
-- OSPF
-- Port Security
-- Wireless Network
-- Network Monitoring
+```text
+ISP Cloud
+   |
+Cisco 2911 Edge Router
+   |
+Cisco ISA-3000 Firewall
+   |
+Cisco 3650 Core Switch
+   |
+Cisco 3560 Distribution Switches
+   |
+Cisco 2960 Access Switches
+   |
+End Devices
