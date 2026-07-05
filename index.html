@@ -197,12 +197,13 @@
     }
 
     .screenshot-card img {
-      cursor: pointer;
-      transition: transform 0.3s ease;
+      cursor: zoom-in;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .screenshot-card img:hover {
       transform: scale(1.02);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
     }
 
     table {
@@ -287,6 +288,56 @@
       margin-bottom: 6px;
     }
 
+    /* Image Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding: 30px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 6, 23, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90%;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      background: white;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #ffffff;
+      font-size: 42px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .lightbox-close:hover {
+      color: #93c5fd;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 22px;
+      color: #e5e7eb;
+      font-size: 15px;
+      text-align: center;
+      max-width: 90%;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 32px;
@@ -299,6 +350,20 @@
 
       section {
         padding: 40px 6%;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox {
+        padding: 15px;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 22px;
+        font-size: 34px;
       }
     }
   </style>
@@ -400,9 +465,11 @@
         ISP Cloud → Edge Router → ISA Firewall → Core Switch → Distribution Switches → Access Switches → End Devices
       </div>
 
-      <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Full%20Topology.png" target="_blank">
-        <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Full%20Topology.png" alt="Full Network Topology">
-      </a>
+      <img 
+        class="clickable-img"
+        src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Full%20Topology.png" 
+        alt="Full Network Topology"
+      >
     </div>
 
     <div class="grid">
@@ -603,128 +670,92 @@
 
       <div class="card screenshot-card">
         <h3>Full Network Topology</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Full%20Topology.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Full%20Topology.png" alt="Full Network Topology">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Full%20Topology.png" alt="Full Network Topology">
       </div>
 
       <div class="card screenshot-card">
         <h3>Edge Router Interfaces</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Router-Interfaces.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Router-Interfaces.png" alt="Router Interfaces">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Router-Interfaces.png" alt="Router Interfaces">
       </div>
 
       <div class="card screenshot-card">
         <h3>Edge Router Routing Table</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Router-Routing-Table.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Router-Routing-Table.png" alt="Router Routing Table">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Router-Routing-Table.png" alt="Router Routing Table">
       </div>
 
       <div class="card screenshot-card">
         <h3>Firewall Interfaces</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Firewall-Interfaces.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Firewall-Interfaces.png" alt="Firewall Interfaces">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Firewall-Interfaces.png" alt="Firewall Interfaces">
       </div>
 
       <div class="card screenshot-card">
         <h3>Firewall Running Configuration</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Firewall-Running-Config.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Firewall-Running-Config.png" alt="Firewall Running Configuration">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Firewall-Running-Config.png" alt="Firewall Running Configuration">
       </div>
 
       <div class="card screenshot-card">
         <h3>Core Switch Interfaces</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-Interfaces.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-Interfaces.png" alt="Core Switch Interfaces">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-Interfaces.png" alt="Core Switch Interfaces">
       </div>
 
       <div class="card screenshot-card">
         <h3>Core Switch VLANs</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-VLANs.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-VLANs.png" alt="Core Switch VLANs">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-VLANs.png" alt="Core Switch VLANs">
       </div>
 
       <div class="card screenshot-card">
         <h3>Core Switch Trunk Links</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-Trunk.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-Trunk.png" alt="Core Switch Trunk Links">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/Core-Trunk.png" alt="Core Switch Trunk Links">
       </div>
 
       <div class="card screenshot-card">
         <h3>Distribution Switch VLANs</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-VLAN.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-VLAN.png" alt="Distribution Switch VLANs">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-VLAN.png" alt="Distribution Switch VLANs">
       </div>
 
       <div class="card screenshot-card">
         <h3>Distribution Switch Trunk Links</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-Trunk.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-Trunk.png" alt="Distribution Switch Trunk Links">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-Trunk.png" alt="Distribution Switch Trunk Links">
       </div>
 
       <div class="card screenshot-card">
         <h3>Distribution Switch CDP Neighbors</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-CDP.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-CDP.png" alt="Distribution Switch CDP Neighbors">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-CDP.png" alt="Distribution Switch CDP Neighbors">
       </div>
 
       <div class="card screenshot-card">
         <h3>Distribution Switch Interface Status</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-Interfaces.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-Interfaces.png" alt="Distribution Switch Interfaces">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-Interfaces.png" alt="Distribution Switch Interfaces">
       </div>
 
       <div class="card screenshot-card">
         <h3>Distribution Switch MAC Address Table</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-MAC-Table.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-MAC-Table.png" alt="Distribution Switch MAC Address Table">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/DS-Administration-MAC-Table.png" alt="Distribution Switch MAC Address Table">
       </div>
 
       <div class="card screenshot-card">
         <h3>Access Switch VLANs</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-VLAN.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-VLAN.png" alt="Access Switch VLANs">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-VLAN.png" alt="Access Switch VLANs">
       </div>
 
       <div class="card screenshot-card">
         <h3>Access Switch Interfaces</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-Interfaces.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-Interfaces.png" alt="Access Switch Interfaces">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-Interfaces.png" alt="Access Switch Interfaces">
       </div>
 
       <div class="card screenshot-card">
         <h3>Access Switch CDP Neighbors</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-CDP.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-CDP.png" alt="Access Switch CDP Neighbors">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-CDP.png" alt="Access Switch CDP Neighbors">
       </div>
 
       <div class="card screenshot-card">
         <h3>Access Switch MAC Address Table</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-MAC-Table.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-MAC-Table.png" alt="Access Switch MAC Address Table">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-MAC-Table.png" alt="Access Switch MAC Address Table">
       </div>
 
       <div class="card screenshot-card">
         <h3>Access Switch Running Configuration</h3>
-        <a href="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-Running-Config-1.png" target="_blank">
-          <img src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-Running-Config-1.png" alt="Access Switch Running Configuration">
-        </a>
+        <img class="clickable-img" src="/Enterprise-Campus-Network/Enterprise-Campus-Network/screenshots/AS-ADMIN1-Running-Config-1.png" alt="Access Switch Running Configuration">
       </div>
 
     </div>
@@ -840,8 +871,46 @@
 
   <footer>
     <p>Enterprise Campus Network Infrastructure | Cisco Packet Tracer | Network Engineering Portfolio</p>
-    <p>Designed and documented by Netshidzivhe mulisa as part of a practical IT infrastructure portfolio.</p>
+    <p>Designed and documented as part of a practical IT infrastructure portfolio.</p>
   </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded screenshot">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <script>
+    const screenshotImages = document.querySelectorAll(".clickable-img");
+
+    screenshotImages.forEach((img) => {
+      img.addEventListener("click", function () {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const caption = document.getElementById("lightbox-caption");
+
+        lightboxImg.src = this.src;
+        caption.textContent = this.alt;
+        lightbox.style.display = "flex";
+      });
+    });
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    document.getElementById("lightbox").addEventListener("click", function (event) {
+      if (event.target.id === "lightbox") {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
 
 </body>
 </html>
